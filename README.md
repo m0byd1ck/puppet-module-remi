@@ -25,10 +25,18 @@ or
     class {'remi':
         remi_enabled => '1',
         remi_gpgcheck => '1',
+        remi_php55_enabled => '0',
+        remi_php55_gpgcheck => '1'
         remi_php56_enabled => '0',
         remi_php56_gpgcheck => '1'
-        remi_php70_enabled => '1',
+        remi_php70_enabled => '0',
         remi_php70_gpgcheck => '1'
+        remi_test_enabled => '0',
+        remi_test_gpgcheck => '1',
+        remi_debuginfo_enabled => '0',
+        remi_debuginfo_gpgcheck => '1',
+        remi_test_debuginfo_enabled => '0',
+        remi_test_debuginfo_gpgcheck => '1',
     }
 
 # Futher Information
