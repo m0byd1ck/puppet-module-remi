@@ -41,6 +41,6 @@
   ],
   "description": "Setup the REMI package repo on Centos/RHEL et al",
   "dependencies": [
-    {"name":"stahnma/epel","version_requirement":">= 1.0.2"}
+    {"name":"stahnma/epel","version_requirement":">= 1.0.2  <2.0.0"}
   ]
 }
