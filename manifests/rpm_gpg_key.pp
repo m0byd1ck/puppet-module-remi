@@ -5,7 +5,7 @@ define remi::rpm_gpg_key($path) {
     path      => '/bin:/usr/bin:/sbin:/usr/sbin',
     command   => "rpm --import ${path}",
     unless    => "rpm -q gpg-pubkey-$(echo $(gpg --throw-keyids < $path) | cut --characters=11-18 | tr [A-Z] [a-z])",
-    require   => File[${path}],
+    require   => File[$path],
     logoutput => 'on_failure',
   }
 }
