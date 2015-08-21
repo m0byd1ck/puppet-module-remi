@@ -30,59 +30,73 @@ class remi (
   if $::osfamily == 'RedHat' and $::operatingsystem !~ /Fedora|Amazon/ {
 
     yumrepo { 'remi':
-      descr      => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch}",
-      mirrorlist => "http://rpms.famillecollet.com/enterprise/${os_maj_release}/remi/mirror",
-      enabled    => $remi_enable,
-      gpgcheck   => $remi_gpgcheck,
-      gpgkey     => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      descr       => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch}",
+      mirrorlist  => $remi['mirrorlist'],
+      enabled     => $remi['enabled'],
+      gpgcheck    => $remi['gpgcheck'],
+      gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      includepkgs => $remi['include'],
+      exclude     => $remi['exclude'],
     }
 
     yumrepo { 'remi-php55':
-      descr    => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - php55",
-      baseurl  => "http://rpms.famillecollet.com/enterprise/${os_maj_release}/php55/${os_basearch}/",
-      enabled  => $remi_php55_enable,
-      gpgcheck => $remi_php55_gpgcheck,
-      gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      descr       => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - php55",
+      baseurl     => $php55['baseurl'],
+      enabled     => $php55['enabled'],
+      gpgcheck    => $php55['gpgcheck'],
+      gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      includepkgs => $php55['include'],
+      exclude     => $php55['exclude'],
     }
 
     yumrepo { 'remi-php56':
-      descr    => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - php56",
-      baseurl  => "http://rpms.famillecollet.com/enterprise/${os_maj_release}/php56/${os_basearch}/",
-      enabled  => $remi_php56_enable,
-      gpgcheck => $remi_php56_gpgcheck,
-      gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      descr       => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - php56",
+      baseurl     => $php56['baseurl'],
+      enabled     => $php56['enabled'],
+      gpgcheck    => $php56['gpgcheck'],
+      gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      includepkgs => $php56['include'],
+      exclude     => $php56['exclude'],
     }
 
     yumrepo { 'remi-php70':
-          descr    => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - php70",
-          baseurl  => "http://rpms.famillecollet.com/enterprise/${os_maj_release}/php70/${os_basearch}/",
-          enabled  => $remi_php70_enable,
-          gpgcheck => $remi_php70_gpgcheck,
-          gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
-        }
+          descr       => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - php70",
+          baseurl     => $php70['baseurl'],
+          enabled     => $php70['enabled'],
+          gpgcheck    => $php70['gpgcheck'],
+          gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+          includepkgs => $php70['include'],
+          exclude     => $php70['exclude'],
+    }
 
     yumrepo { 'remi-test':
-      descr      => "remi RPM for Enterprise Linux - ${os_basearch}",
-      mirrorlist => "http://rpms.famillecollet.com/enterprise/${os_maj_release}/test/mirror",
-      enabled    => $remi_test_enable,
-      gpgcheck   => $remi_test_gpgcheck,
-      gpgkey     => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      descr       => "remi RPM for Enterprise Linux - ${os_basearch}",
+      mirrorlist  => $test['mirrorlist'],
+      enabled     => $test['enabled'],
+      gpgcheck    => $test['gpgcheck'],
+      gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      includepkgs => $test['include'],
+      exclude     => $test['exclude'],
     }
 
     yumrepo { 'remi-debuginfo':
-      descr    => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - debuginfo",
-      baseurl  => "http://rpms.famillecollet.com/enterprise/${os_maj_release}/debug-remi/${os_basearch}/",
-      enabled  => $remi_debuginfo_enable,
-      gpgcheck => $remi_debuginfo_gpgcheck,
-      gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      descr       => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - debuginfo",
+      baseurl     => $debuginfo['baseurl'],
+      enabled     => $debuginfo['enabled'],
+      gpgcheck    => $debuginfo['gpgcheck'],
+      gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      includepkgs => $debuginfo['include'],
+      exclude     => $debuginfo['exclude'],
     }
 
     yumrepo { 'remi-test-debuginfo':
-      descr    => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - debuginfo",
-      baseurl  => "http://rpms.famillecollet.com/enterprise/${os_maj_release}/debug-test/${os_basearch}/",
-      enabled  => $remi_test_debuginfo_enable,
-      gpgcheck => $remi_test_debuginfo_gpgcheck,
-      gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      descr       => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch} - debuginfo",
+      baseurl     => $test_debuginfo['baseurl'],
+      enabled     => $test_debuginfo['enabled'],
+      gpgcheck    => $test_debuginfo['gpgcheck'],
+      gpgkey      => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
+      includepkgs => $test_debuginfo['include'],
+      exclude     => $test_debuginfo['exclude'],
     }
 
     file { '/etc/pki/rpm-gpg/RPM-GPG-KEY-remi':
