@@ -38,7 +38,7 @@ class remi (
 
     yumrepo { 'remi':
       descr      => "remi RPM for Enterprise Linux ${os_maj_release} - ${os_basearch}",
-      mirrorlist => "http://rpms.famillecollet.com/enterprise/${::os_maj_version}/remi/mirror",
+      mirrorlist => "http://rpms.famillecollet.com/enterprise/${os_maj_release}/remi/mirror",
       enabled    => $remi_enable,
       gpgcheck   => $remi_gpgcheck,
       gpgkey     => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
@@ -70,7 +70,7 @@ class remi (
 
     yumrepo { 'remi-test':
       descr      => "remi RPM for Enterprise Linux - ${os_basearch}",
-      mirrorlist => "http://rpms.famillecollet.com/enterprise/${::os_major_version}/test/mirror",
+      mirrorlist => "http://rpms.famillecollet.com/enterprise/${os_maj_release}/test/mirror",
       enabled    => $remi_test_enable,
       gpgcheck   => $remi_test_gpgcheck,
       gpgkey     => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
