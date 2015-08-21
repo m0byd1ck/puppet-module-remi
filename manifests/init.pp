@@ -14,22 +14,15 @@
 #
 
 class remi (
-    $remi_enable                   = $remi::params::remi_enable,
-    $remi_gpgcheck                 = $remi::params::remi_gpgcheck,
-    $remi_php55_enable             = $remi::params::remi_php55_enable,
-    $remi_php55_gpgcheck           = $remi::params::remi_php55_gpgcheck,
-    $remi_php56_enable             = $remi::params::remi_php56_enable,
-    $remi_php56_gpgcheck           = $remi::params::remi_php56_gpgcheck,
-    $remi_php70_enable             = $remi::params::remi_php70_enable,
-    $remi_php70_gpgcheck           = $remi::params::remi_php70_gpgcheck,
-    $remi_test_enable              = $remi::params::remi_test_enable,
-    $remi_test_gpgcheck            = $remi::params::remi_test_gpgcheck,
-    $remi_debuginfo_enable         = $remi::params::remi_debuginfo_enable,
-    $remi_debuginfo_gpgcheck       = $remi::params::remi_debuginfo_gpgcheck,
-    $remi_test_debuginfo_enable    = $remi::params::remi_test_debuginfo_enable,
-    $remi_test_debuginfo_gpgcheck  = $remi::params::remi_test_debuginfo_gpgcheck,
-    $os_maj_release                = $remi::params::os_maj_release,
-    $os_basearch                   = $remi::params::os_basearch,
+    $remi           = $remi::params::remi,
+    $php55          = $remi::params::php55,
+    $php56          = $remi::params::php56,
+    $php70          = $remi::params::php70,
+    $test           = $remi::params::test,
+    $debuginfo      = $remi::params::debuginfo,
+    $test_debuginfo = $remi::params::test_debuginfo,
+    $os_maj_release = $remi::params::os_maj_release,
+    $os_basearch    = $remi::params::os_basearch,
   ) inherits remi::params {
 
   require epel
