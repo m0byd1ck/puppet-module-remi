@@ -16,33 +16,67 @@ Other repositories that will setup but disabled
   * remi-test
   * remi-test-debuginfo
 
-# Usage
+# Simple Usage
 
     include remi
 
-or
+# Advanced Usage
     
     class {'remi':
-        remi_enabled => '1',
-        remi_gpgcheck => '1',
-        remi_php55_enabled => '0',
-        remi_php55_gpgcheck => '1'
-        remi_php56_enabled => '0',
-        remi_php56_gpgcheck => '1'
-        remi_php70_enabled => '0',
-        remi_php70_gpgcheck => '1'
-        remi_test_enabled => '0',
-        remi_test_gpgcheck => '1',
-        remi_debuginfo_enabled => '0',
-        remi_debuginfo_gpgcheck => '1',
-        remi_test_debuginfo_enabled => '0',
-        remi_test_debuginfo_gpgcheck => '1',
+        remi           = [
+            'enabled'    => '1',
+            'gpgcheck'   => '1',
+            'mirrorlist' => "http://rpms.famillecollet.com/enterprise/7/remi/mirror",
+            'include'    => ['package1', 'package*', 'package?'],
+            'exclude'    => ['package1', 'package*', 'package?']
+          ]
+          php55          = [
+            'enabled'  => '0',
+            'gpgcheck' => '1',
+            'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/php55/x86_64/",
+            'include'  => ['package1', 'package*', 'package?'],
+            'exclude'  => ['package1', 'package*', 'package?']
+          ]
+          php56          = [
+            'enabled'  => '0',
+            'gpgcheck' => '1',
+            'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/php56/x86_64/",
+            'include'  => ['package1', 'package*', 'package?'],
+            'exclude'  => ['package1', 'package*', 'package?']
+          ]
+          php70          = [
+            'enabled'  => '0',
+            'gpgcheck' => '1',
+            'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/php70/x86_64/",
+            'include'  => ['package1', 'package*', 'package?'],
+            'exclude'  => ['package1', 'package*', 'package?']
+          ]
+          test           = [
+            'enabled'    => '0',
+            'gpgcheck'   => '1',
+            'mirrorlist' => "http://rpms.famillecollet.com/enterprise/7/test/mirror",
+            'include'    => ['package1', 'package*', 'package?'],
+            'exclude'    => ['package1', 'package*', 'package?']
+          ]
+          debuginfo      = [
+            'enabled'  => '0',
+            'gpgcheck' => '1',
+            'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/debug-remi/x86_64/",
+            'include'  => ['package1', 'package*', 'package?'],
+            'exclude'  => ['package1', 'package*', 'package?']
+          ]
+          test_debuginfo = [
+            'enabled'  => '0',
+            'gpgcheck' => '1',
+            'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/debug-test/x86_64/",
+            'include'  => ['package1', 'package*', 'package?'],
+            'exclude'  => ['package1', 'package*', 'package?']
+          ]
     }
 
 # Futher Information
 
 * [remi website](http://rpms.famillecollet.com/)
-* This code base based on code from https://github.com/stahnma/puppet-module-epel and https://github.com/ckhall/puppet-module-remi
 
 # Testing
 
