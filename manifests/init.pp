@@ -109,7 +109,7 @@ class remi (
 
     remi::rpm_gpg_key{ 'remi':
       path   => '/etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
-      before => yumrepo['remi','remi-php55','remi-php56','remi-php70','remi-test','remi-debuginfo', 'remi-test-debuginfo'],
+      before => Yumrepo['remi','remi-php55','remi-php56','remi-php70','remi-test','remi-debuginfo', 'remi-test-debuginfo'],
     }
   } else {
       notice ("Your operating system ${::operatingsystem} will not have the REMI repository applied")
