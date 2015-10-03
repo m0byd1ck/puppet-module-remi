@@ -6,7 +6,7 @@
 ## 1.0.0
  
 ### Added:
- - Include/Excluse packages
+ - Include/Exclude packages
  
 ### Modified:
  - Changed params to new array structure
