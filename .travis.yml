@@ -1,5 +1,6 @@
 sudo: false
 language: ruby
+script: "bundle exec rake lint && bundle exec rake rspec"
 matrix:
   fast_finish: true
   include:
