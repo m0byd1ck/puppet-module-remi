@@ -1,7 +1,7 @@
 # Optional parameters in setting up REMI
 class remi::params {
 
-  $os_maj_release = $::os_maj_version
+  $os_maj_release = $::operatingsystemmajrelease
   $os_basearch    = $::architecture
 
   $remi           = {
