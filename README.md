@@ -41,49 +41,49 @@ Requires stahnma/epel module
 ## Usage
 
     class {'remi':
-        remi           = [
+        remi           => [
             'enabled'    => '1',
             'gpgcheck'   => '1',
             'mirrorlist' => "http://rpms.famillecollet.com/enterprise/7/remi/mirror",
             'include'    => ['package1', 'package*'],
             'exclude'    => ['package1', 'package*']
           ],
-          php55          = [
+          php55          => [
             'enabled'  => '0',
             'gpgcheck' => '1',
             'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/php55/x86_64/",
             'include'  => ['package1', 'package*'],
             'exclude'  => ['package1', 'package*']
           ],
-          php56          = [
+          php56          => [
             'enabled'  => '0',
             'gpgcheck' => '1',
             'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/php56/x86_64/",
             'include'  => ['package1', 'package*'],
             'exclude'  => ['package1', 'package*']
           ],
-          php70          = [
+          php70          => [
             'enabled'  => '0',
             'gpgcheck' => '1',
             'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/php70/x86_64/",
             'include'  => ['package1', 'package*'],
             'exclude'  => ['package1', 'package*']
           ],
-          test           = [
+          test           => [
             'enabled'    => '0',
             'gpgcheck'   => '1',
             'mirrorlist' => "http://rpms.famillecollet.com/enterprise/7/test/mirror",
             'include'    => ['package1', 'package*'],
             'exclude'    => ['package1', 'package*']
           ],
-          debuginfo      = [
+          debuginfo      => [
             'enabled'  => '0',
             'gpgcheck' => '1',
             'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/debug-remi/x86_64/",
             'include'  => ['package1', 'package*'],
             'exclude'  => ['package1', 'package*']
           ],
-          test_debuginfo = [
+          test_debuginfo => [
             'enabled'  => '0',
             'gpgcheck' => '1',
             'baseurl'  => "http://rpms.famillecollet.com/enterprise/7/debug-test/x86_64/",
